@@ -172,6 +172,67 @@ $ composer require vendor/package
 $ composer require league/flysystem
 $ composer require monolog/monolog
 ```
+####composer.json
+Definición de proyecto, define los requisitos de componentes para un proyecto de sofware.
+Ejemplo:
+```json
+{
+  "require": {
+    "monolog/monolog": "1.0.*"
+  }
+}
+```
+
+####composer.lock
+Archivo de dependecias con versiones actualmente instaladas.
+
+####Autoload (PSR-4)
+Para componentes que lo especifican, composer genera un archivo `vendor/autoload.php`.
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+```
+
+###Código de ejemplo
+```php
+$log = new Monolog\Logger('name');
+$log->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::WARNING));
+$log->addWarning('Foo');
+```
+
+##Y Drupal?
+```sh
+$ git clone --branch 8.3.x https://git.drupal.org/project/drupal.git
+$ cd drupal
+$ composer install
+```
+* [Usando Composer con
+  Drupal](https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal)
+* [Usando Composer para manejar dependencias](https://www.drupal.org/node/2718229)
+* [Usando DO como fuente de paquetes Drupal](https://www.drupal.org/node/2718229#drupal-packagist)
+
+
+###Exponer Componentes de Drupal
+
+[[Meta] Expose Drupal Components outside of Drupal](https://www.drupal.org/node/1826054)
+
+###Distribuyendo Drupal
+[Drupal Composer](http://drupal-composer.org/)
+
+```sh
+composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev
+--no-interaction
+```
+
+###Uso en Distribuciones
+[Drupal Lightning](https://www.drupal.org/project/lightning)
+```sh
+$ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-interaction
+```
+
+
+
+###Convenciones Drupal
 
 ##Referencias
 
