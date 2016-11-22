@@ -230,11 +230,16 @@ composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stabil
 $ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-interaction
 ```
 
-
-
 ###Convenciones Drupal
+
+* [Namespaces](https://www.drupal.org/docs/develop/coding-standards/namespaces)
+* [PSR-4 namespaces and autoloading in Drupal
+  8](https://www.drupal.org/docs/develop/coding-standards/psr-4-namespaces-and-autoloading-in-drupal-8)
+* [Composer package naming
+  conventions](https://www.drupal.org/docs/develop/coding-standards/composer-package-naming-conventions)
 
 ##Referencias
 
 * https://github.com/codeguy/modern-php/tree/master/04-components
 * [PHP: The Right Way](http://www.phptherightway.com/)
+* [Composer](https://getcomposer.org/)
