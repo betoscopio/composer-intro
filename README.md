@@ -172,3 +172,8 @@ $ composer require vendor/package
 $ composer require league/flysystem
 $ composer require monolog/monolog
 ```
+
+##Referencias
+
+* https://github.com/codeguy/modern-php/tree/master/04-components
+* [PHP: The Right Way](http://www.phptherightway.com/)
