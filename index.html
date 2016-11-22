@@ -1,19 +1,90 @@
-#Introducción a Composer
+<!doctype html>
+<html lang="es">
 
-![Composer logo](images/logo-composer-transparent.png)
+  <head>
+    <meta charset="utf-8">
 
-*Beto Arancibia*
-*@betoscopio*
+    <title>Introducción a Composer</title>
 
+    <meta name="description" content="Contribuyendo al proyecto Drupal">
+    <meta name="author" content="Beto Arancibia">
 
-##Warning!!!
-*There might be some nerd talk ahead...*
-![Hackerman](images/hackerman.jpg)
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-##El problema
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-Hace no tanto tiempo...
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section  data-background-color="#000000">
+          <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+            <h1>Introducción a Composer</h1>
+            <!--h3>The HTML Presentation Framework</h3-->
+            <p>
+            <small><a href="http://betoarancibia.com">Beto Arancibia</a> / <a href="http://twitter.com/betoscopio">@betoscopio</a></small>
+            </p>
+            <p>
+            <small>Drupal Chile Meetup, 22 de Noviembre de 2016</small>
+            </p>
+          </div>
+
+        </section>
+        <section>
+          <h2>Presentacion en</h2>
+          <p>
+          <img width="" height="" data-src="images/logo-composer-transparent.png" alt="Composer
+          Logo">
+          </p>
+          <p>betoscopio.github.io/composer-intro</p>
+        </section>
+        <!--
+          <section>
+          <h2>¿Quién es?</h2>
+          <p><small>@betoscopio</small></p>
+          <p>
+          <img width="100%" height="" data-src="images/santiago_mountains.jpg" alt="montañas Santiago de Chile">
+          </p>
+          </section>
+        -->
+        <section>
+          <h2>Warning!!!</h2>
+          <p>
+          <img width="" height="" data-src="images/hackerman.jpg" alt="Hackerman"
+          </p>
+          <p>There might be some nerd talk ahead...</p>
+        </section>
+
+        <section>
+          <h2>El problema...</h2>          
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+          ## Hace no tanto tiempo
 ```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -36,7 +107,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 }
 
 ```
+          </script>
+        </section>
 
+        <section data-markdown>
+          <script type="text/template">
 ```php
 class My_Bootstrap_Resource_Layout
     extends Zend_Application_Resource_ResourceAbstract
@@ -53,7 +128,10 @@ class My_Bootstrap_Resource_Layout
     }
 }
 ```
-
+          </script>
+        </section>
+                <section data-markdown>
+          <script type="text/template">
 ```php
 class ErrorController extends Zend_Controller_Action
 {
@@ -83,26 +161,46 @@ class ErrorController extends Zend_Controller_Action
     }
 }
 ```
+          </script>
+        </section>
+        
+        <section data-markdown>
+          <script type="text/template">
+          ## PHP Pear?
+          </script>
+        </section>
 
-###PHP Pear?
-
-###Pero... y el problema?
+        <section data-markdown>
+          <script type="text/template">
+## Pero... y el problema?
 
 * [ 16 PHP Frameworks To Consider For Your Next Project ](https://www.sitepoint.com/16-php-frameworks/)
 * [The Big List of PHP Frameworks](http://ernieleseberg.com/big-list-of-php-frameworks/)
+          </script>
+        </section>
 
-![Seriously](images/seriously-meme.png)
+        <section data-background-image="images/seriously-meme.png" data-background-color="#ffffff" data-background-size="60%">
+          
+        </section>
 
+        <section data-markdown>
+          <script type="text/template">
 ##El inicio de la Revolución
 
 ###PHP 5.3 (2009)
+          </script>
+        </section>
 
-####Namespaces
+        <section data-markdown>
+          <script type="text/template">
+##Namespaces
 Organiza el código PHP en una jerarquía virtual. Esto permite que distintos proveedores puedan tener clases del mismo nombre y no cause conflicitos. 
  
- [Ejemplo de uso]( https://github.com/symfony/http-foundation)
- 
- 
+         </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
 ```php
 namespace Symfony\Component\HttpFoundation;  //definición del namespace
 
@@ -110,69 +208,99 @@ namespace Symfony\Component\HttpFoundation;  //definición del namespace
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface ;
 ```
-Gracias a los namespaces, ya no existe el problema de colisiones de nombres de clases. Esto permitido que puedan existir herramientas como Composer, lo que ha generado una revolución en la comunidad y los proyectos PHP.
 
+ [Ejemplo de uso]( https://github.com/symfony/http-foundation)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
 ##Adios a los Frameworks (monolíticos)
 *...bienvenidos los componentes*
+          </script>
+        </section>
 
+        <section data-markdown>
+          <script type="text/template">
 ###Estándares y componentes
 La comunidad PHP ha evolucionado de un modelo de framework centralizado a un ecosistema distribuido de eficientes, interoperables y especializados componentes.
+          </script>
+        </section>
 
-###PHP-FIG
+        <section data-markdown>
+          <script type="text/template">
+##PHP-FIG
 Para que los frameworks puedan comunicarse en un idioma común, ellos necesitan estándares, para esto se ha creado[ PHP Framework Interop Group](http://www.php-fig.org/) 
+          </script>
+        </section>
 
-###PSR
-Es el acrónimo para *PHP standards recommendation*. Son recomendaciones a seguir por el framework
-que resuelven distintos problemas, cáda uno es seguido por un número. Estas recomendaciones pueden
-ser adoptadas por un *framework* y contruirlo sobre soluciones comunes.
+                <section data-markdown>
+          <script type="text/template">
+##PSR
+Es el acrónimo para *PHP standards recommendation*.
 
 Una lista completa de las recomendaciones aceptadas y en WIP se puede ver en [FIG-PSRs](http://www.php-fig.org/psr/).
+          </script>
+        </section>
 
-Los estándares aceptados hasta el momento son:
-* PSR-0: Autoloading (deprecated)
-* [PSR-1: Basic code style](http://www.php-fig.org/psr/psr-1/)
-* [PSR-2: Strict code style](http://www.php-fig.org/psr/psr-2/)
-* [PSR-3: Logger interface](http://www.php-fig.org/psr/psr-3/)
-* [PSR-4: Autoloading](http://www.php-fig.org/psr/psr-4/)
-Nuevos:
-* [PSR-6: Caching interface](http://www.php-fig.org/psr/psr-6/)
-* [PSR-7: HTTP Message](http://www.php-fig.org/psr/psr-7/)
-* [PSR-13: Hypermedia Links](http://www.php-fig.org/psr/psr-13/)
-
-###Componentes
+                <section data-markdown>
+          <script type="text/template">
+##Componentes
 PHP moderno es más sobre componer soluciones con componenetes espcializados que usar frameworks monoliticos.
-Actualmente en lugar de elegir un framework y seguir con esa elección, se puede elegir componentes especializados y agregar más cuando se vayan necesitando.
+
 **Un componente es un conjunto de código que ayuda a resolver un problema especifico en una aplicación.**
 
-###Frameworks vs Componentes
-Los componentes entregan más flexibilidad, son prácticos para proyectos pequeños, los frameworks son últiles cuando se necesita extructura para proyectos más grandes y convenciones para equipos de trabajo mayores.
+          </script>
+        </section>
 
-###Encontrando componentes
+        <section data-markdown>
+          <script type="text/template">
+##Encontrando componentes
 
 * [Packagist](https://packagist.org/)
 * [Awesome PHP](https://github.com/ziadoz/awesome-php)
 * [ The League of Extraordinary Packages](http://thephpleague.com/)
 
+          </script>
+        </section>
+
+                <section data-markdown>
+          <script type="text/template">
 ##Composer
 Usando componentes PHP.
 
-[Composer](https://getcomposer.org/) es un manejador de dependencias PHP, que se encargará de descargar y hacer autoloads de los componentes (y sus dependencias) en el proyecto. Composer automaticamente generará un autoloader PSR compatible para todos nuestros componentes PHP del proyecto. Abstrae efectivamente el manejo de dependencias y el autoloading.
+[Composer](https://getcomposer.org/) es un manejador de dependencias PHP, que se encargará de descargar y hacer autoloads de los componentes (y sus dependencias) en el proyecto.
 
-###Instalación
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+##Instalación
 ```sh
 $ curl -sS https://getcomposer.org/installer | php
 $ sudo mv composer.phar /usr/local/bin/composer 
 $ sudo chmod +x /usr/local/bin/composer
 $ PATH=/usr/local/bin:$PATH 
 ```
-###Uso
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+##Uso
 ```
 $ composer require vendor/package
 //Ejemplo:
 $ composer require league/flysystem
 $ composer require monolog/monolog
 ```
-####composer.json
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+###composer.json
 Definición de proyecto, define los requisitos de componentes para un proyecto de sofware.
 Ejemplo:
 ```json
@@ -183,7 +311,12 @@ Ejemplo:
 }
 ```
 
-####composer.lock
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+###composer.lock
 Archivo de dependecias con versiones actualmente instaladas.
 Ejemplo:
 ```json
@@ -333,13 +466,22 @@ Ejemplo:
 }
 ```
 
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
 ####Autoload (PSR-4)
 Para componentes que lo especifican, composer genera un archivo `vendor/autoload.php`.
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 ```
+          </script>
+        </section>
 
+        <section data-markdown>
+          <script type="text/template">
 ###Código de ejemplo
 ```php
 $log = new Monolog\Logger('name');
@@ -347,23 +489,44 @@ $log->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::W
 $log->addWarning('Foo');
 ```
 
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
 ##Y Drupal?
+
 ```sh
 $ git clone --branch 8.3.x https://git.drupal.org/project/drupal.git
 $ cd drupal
 $ composer install
 ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+## En DO
 * [Usando Composer con
   Drupal](https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal)
 * [Usando Composer para manejar dependencias](https://www.drupal.org/node/2718229)
 * [Usando DO como fuente de paquetes Drupal](https://www.drupal.org/node/2718229#drupal-packagist)
 
+          </script>
+        </section>
 
-###Exponer Componentes de Drupal
+        <section data-markdown>
+          <script type="text/template">
+##Exponer Componentes de Drupal
 
 [[Meta] Expose Drupal Components outside of Drupal](https://www.drupal.org/node/1826054)
 
-###Distribuyendo Drupal
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+##Distribuyendo Drupal
 [Drupal Composer](http://drupal-composer.org/)
 
 ```sh
@@ -371,12 +534,22 @@ composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stabil
 --no-interaction
 ```
 
+          </script>
+        </section>
+
+                <section data-markdown>
+          <script type="text/template">
 ###Uso en Distribuciones
 [Drupal Lightning](https://www.drupal.org/project/lightning)
 ```sh
 $ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-interaction
 ```
 
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
 ###Convenciones Drupal
 
 * [Namespaces](https://www.drupal.org/docs/develop/coding-standards/namespaces)
@@ -385,8 +558,57 @@ $ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-intera
 * [Composer package naming
   conventions](https://www.drupal.org/docs/develop/coding-standards/composer-package-naming-conventions)
 
+          </script>
+        </section>
+
+
+        <section data-markdown>
+          <script type="text/template">
 ##Referencias
 
 * https://github.com/codeguy/modern-php/tree/master/04-components
 * [PHP: The Right Way](http://www.phptherightway.com/)
 * [Composer](https://getcomposer.org/)
+
+          </script>
+        </section>
+
+        <section>
+          <h2>Gracias</h2>
+          <p><small>@betoscopio</small></p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+  ]
+});
+
+    </script>
+
+  </body>
+</html>
