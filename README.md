@@ -170,4 +170,5 @@ $ PATH=/usr/local/bin:$PATH
 $ composer require vendor/package
 //Ejemplo:
 $ composer require league/flysystem
+$ composer require monolog/monolog
 ```
