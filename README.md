@@ -84,6 +84,8 @@ class ErrorController extends Zend_Controller_Action
 }
 ```
 
+###PHP Pear?
+
 ###Pero... y el problema?
 
 * [ 16 PHP Frameworks To Consider For Your Next Project ](https://www.sitepoint.com/16-php-frameworks/)
@@ -110,3 +112,62 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface ;
 ```
 Gracias a los namespaces, ya no existe el problema de colisiones de nombres de clases. Esto permitido que puedan existir herramientas como Composer, lo que ha generado una revolución en la comunidad y los proyectos PHP.
 
+##Adios a los Frameworks (monolíticos)
+*...bienvenidos los componentes*
+
+###Estándares y componentes
+La comunidad PHP ha evolucionado de un modelo de framework centralizado a un ecosistema distribuido de eficientes, interoperables y especializados componentes.
+
+###PHP-FIG
+Para que los frameworks puedan comunicarse en un idioma común, ellos necesitan estándares, para esto se ha creado[ PHP Framework Interop Group](http://www.php-fig.org/) 
+
+###PSR
+Es el acrónimo para *PHP standards recommendation*. Son recomendaciones a seguir por el framework
+que resuelven distintos problemas, cáda uno es seguido por un número. Estas recomendaciones pueden
+ser adoptadas por un *framework* y contruirlo sobre soluciones comunes.
+
+Una lista completa de las recomendaciones aceptadas y en WIP se puede ver en [FIG-PSRs](http://www.php-fig.org/psr/).
+
+Los estándares aceptados hasta el momento son:
+* PSR-0: Autoloading (deprecated)
+* [PSR-1: Basic code style](http://www.php-fig.org/psr/psr-1/)
+* [PSR-2: Strict code style](http://www.php-fig.org/psr/psr-2/)
+* [PSR-3: Logger interface](http://www.php-fig.org/psr/psr-3/)
+* [PSR-4: Autoloading](http://www.php-fig.org/psr/psr-4/)
+Nuevos:
+* [PSR-6: Caching interface](http://www.php-fig.org/psr/psr-6/)
+* [PSR-7: HTTP Message](http://www.php-fig.org/psr/psr-7/)
+* [PSR-13: Hypermedia Links](http://www.php-fig.org/psr/psr-13/)
+
+###Componentes
+PHP moderno es más sobre componer soluciones con componenetes espcializados que usar frameworks monoliticos.
+Actualmente en lugar de elegir un framework y seguir con esa elección, se puede elegir componentes especializados y agregar más cuando se vayan necesitando.
+**Un componente es un conjunto de código que ayuda a resolver un problema especifico en una aplicación.**
+
+###Frameworks vs Componentes
+Los componentes entregan más flexibilidad, son prácticos para proyectos pequeños, los frameworks son últiles cuando se necesita extructura para proyectos más grandes y convenciones para equipos de trabajo mayores.
+
+###Encontrando componentes
+
+* [Packagist](https://packagist.org/)
+* [Awesome PHP](https://github.com/ziadoz/awesome-php)
+* [ The League of Extraordinary Packages](http://thephpleague.com/)
+
+##Composer
+Usando componentes PHP.
+
+[Composer](https://getcomposer.org/) es un manejador de dependencias PHP, que se encargará de descargar y hacer autoloads de los componentes (y sus dependencias) en el proyecto. Composer automaticamente generará un autoloader PSR compatible para todos nuestros componentes PHP del proyecto. Abstrae efectivamente el manejo de dependencias y el autoloading.
+
+###Instalación
+```sh
+$ curl -sS https://getcomposer.org/installer | php
+$ sudo mv composer.phar /usr/local/bin/composer 
+$ sudo chmod +x /usr/local/bin/composer
+$ PATH=/usr/local/bin:$PATH 
+```
+###Uso
+```
+$ composer require vendor/package
+//Ejemplo:
+$ composer require league/flysystem
+```
