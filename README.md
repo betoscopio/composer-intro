@@ -1,6 +1,6 @@
 #Introducción a Composer
 
-![Composer logo](logo-composer-transparent.png)
+![Composer logo](images/logo-composer-transparent.png)
 
 *Beto Arancibia*
 *@betoscopio*
@@ -8,7 +8,7 @@
 
 ##Warning!!!
 *There might be some nerd talk ahead...*
-![Hackerman](hackerman.jpg)
+![Hackerman](images/hackerman.jpg)
 
 ##El problema
 
@@ -91,7 +91,7 @@ class ErrorController extends Zend_Controller_Action
 * [ 16 PHP Frameworks To Consider For Your Next Project ](https://www.sitepoint.com/16-php-frameworks/)
 * [The Big List of PHP Frameworks](http://ernieleseberg.com/big-list-of-php-frameworks/)
 
-![Seriously](seriously-meme.png)
+![Seriously](images/seriously-meme.png)
 
 ##El inicio de la Revolución
 
