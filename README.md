@@ -1,4 +1,4 @@
-#Introducción a Composer
+# Introducción a Composer
 
 ![Composer logo](images/logo-composer-transparent.png)
 
@@ -6,11 +6,11 @@
 *@betoscopio*
 
 
-##Warning!!!
+## Warning!!!
 *There might be some nerd talk ahead...*
 ![Hackerman](images/hackerman.jpg)
 
-##El problema
+## El problema
 
 Hace no tanto tiempo...
 
@@ -84,9 +84,9 @@ class ErrorController extends Zend_Controller_Action
 }
 ```
 
-###PHP Pear?
+### PHP Pear?
 
-###Pero... y el problema?
+### Pero... y el problema?
 
 * [ 16 PHP Frameworks To Consider For Your Next Project ](https://www.sitepoint.com/16-php-frameworks/)
 * [The Big List of PHP Frameworks](http://ernieleseberg.com/big-list-of-php-frameworks/)
@@ -112,16 +112,16 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface ;
 ```
 Gracias a los namespaces, ya no existe el problema de colisiones de nombres de clases. Esto permitido que puedan existir herramientas como Composer, lo que ha generado una revolución en la comunidad y los proyectos PHP.
 
-##Adios a los Frameworks (monolíticos)
+## Adios a los Frameworks (monolíticos)
 *...bienvenidos los componentes*
 
-###Estándares y componentes
+### Estándares y componentes
 La comunidad PHP ha evolucionado de un modelo de framework centralizado a un ecosistema distribuido de eficientes, interoperables y especializados componentes.
 
-###PHP-FIG
+### PHP-FIG
 Para que los frameworks puedan comunicarse en un idioma común, ellos necesitan estándares, para esto se ha creado[ PHP Framework Interop Group](http://www.php-fig.org/) 
 
-###PSR
+### PSR
 Es el acrónimo para *PHP standards recommendation*. Son recomendaciones a seguir por el framework
 que resuelven distintos problemas, cáda uno es seguido por un número. Estas recomendaciones pueden
 ser adoptadas por un *framework* y contruirlo sobre soluciones comunes.
@@ -147,32 +147,32 @@ Actualmente en lugar de elegir un framework y seguir con esa elección, se puede
 ###Frameworks vs Componentes
 Los componentes entregan más flexibilidad, son prácticos para proyectos pequeños, los frameworks son últiles cuando se necesita extructura para proyectos más grandes y convenciones para equipos de trabajo mayores.
 
-###Encontrando componentes
+### Encontrando componentes
 
 * [Packagist](https://packagist.org/)
 * [Awesome PHP](https://github.com/ziadoz/awesome-php)
 * [ The League of Extraordinary Packages](http://thephpleague.com/)
 
-##Composer
+## Composer
 Usando componentes PHP.
 
 [Composer](https://getcomposer.org/) es un manejador de dependencias PHP, que se encargará de descargar y hacer autoloads de los componentes (y sus dependencias) en el proyecto. Composer automaticamente generará un autoloader PSR compatible para todos nuestros componentes PHP del proyecto. Abstrae efectivamente el manejo de dependencias y el autoloading.
 
-###Instalación
+### Instalación
 ```sh
 $ curl -sS https://getcomposer.org/installer | php
 $ sudo mv composer.phar /usr/local/bin/composer 
 $ sudo chmod +x /usr/local/bin/composer
 $ PATH=/usr/local/bin:$PATH 
 ```
-###Uso
+### Uso
 ```
 $ composer require vendor/package
 //Ejemplo:
 $ composer require league/flysystem
 $ composer require monolog/monolog
 ```
-####composer.json
+#### composer.json
 Definición de proyecto, define los requisitos de componentes para un proyecto de sofware.
 Ejemplo:
 ```json
@@ -183,7 +183,7 @@ Ejemplo:
 }
 ```
 
-####composer.lock
+#### composer.lock
 Archivo de dependecias con versiones actualmente instaladas.
 Ejemplo:
 ```json
@@ -333,21 +333,21 @@ Ejemplo:
 }
 ```
 
-####Autoload (PSR-4)
+#### Autoload (PSR-4)
 Para componentes que lo especifican, composer genera un archivo `vendor/autoload.php`.
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-###Código de ejemplo
+### Código de ejemplo
 ```php
 $log = new Monolog\Logger('name');
 $log->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::WARNING));
 $log->addWarning('Foo');
 ```
 
-##Y Drupal?
+## Y Drupal?
 ```sh
 $ git clone --branch 8.3.x https://git.drupal.org/project/drupal.git
 $ cd drupal
@@ -359,11 +359,11 @@ $ composer install
 * [Usando DO como fuente de paquetes Drupal](https://www.drupal.org/node/2718229#drupal-packagist)
 
 
-###Exponer Componentes de Drupal
+### Exponer Componentes de Drupal
 
 [[Meta] Expose Drupal Components outside of Drupal](https://www.drupal.org/node/1826054)
 
-###Distribuyendo Drupal
+### Distribuyendo Drupal
 [Drupal Composer](http://drupal-composer.org/)
 
 ```sh
@@ -371,13 +371,13 @@ composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stabil
 --no-interaction
 ```
 
-###Uso en Distribuciones
+### Uso en Distribuciones
 [Drupal Lightning](https://www.drupal.org/project/lightning)
 ```sh
 $ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-interaction
 ```
 
-###Convenciones Drupal
+### Convenciones Drupal
 
 * [Namespaces](https://www.drupal.org/docs/develop/coding-standards/namespaces)
 * [PSR-4 namespaces and autoloading in Drupal
@@ -385,7 +385,7 @@ $ composer create-project acquia/lightning-project:^8.1.0 MY_PROJECT --no-intera
 * [Composer package naming
   conventions](https://www.drupal.org/docs/develop/coding-standards/composer-package-naming-conventions)
 
-##Referencias
+## Referencias
 
 * https://github.com/codeguy/modern-php/tree/master/04-components
 * [PHP: The Right Way](http://www.phptherightway.com/)
