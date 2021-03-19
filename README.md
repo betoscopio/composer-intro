@@ -140,12 +140,12 @@ Nuevos:
 * [PSR-7: HTTP Message](http://www.php-fig.org/psr/psr-7/)
 * [PSR-13: Hypermedia Links](http://www.php-fig.org/psr/psr-13/)
 
-###Componentes
+### Componentes
 PHP moderno es más sobre componer soluciones con componenetes espcializados que usar frameworks monoliticos.
 Actualmente en lugar de elegir un framework y seguir con esa elección, se puede elegir componentes especializados y agregar más cuando se vayan necesitando.
 **Un componente es un conjunto de código que ayuda a resolver un problema especifico en una aplicación.**
 
-###Frameworks vs Componentes
+### Frameworks vs Componentes
 Los componentes entregan más flexibilidad, son prácticos para proyectos pequeños, los frameworks son últiles cuando se necesita extructura para proyectos más grandes y convenciones para equipos de trabajo mayores.
 
 ### Encontrando componentes
