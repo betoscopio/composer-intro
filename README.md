@@ -8,6 +8,7 @@
 
 ## Warning!!!
 *There might be some nerd talk ahead...*
+
 ![Hackerman](images/hackerman.jpg)
 
 ## El problema
